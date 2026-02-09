@@ -15,8 +15,7 @@ Standalone ACP chat UI (browser) + server bridge.
 ```bash
 cd /home/tools/acp-chat
 npm install
-npm run build:web
-npm run build:server
+npm run build
 
 # requires a token if ACP_CHAT_AUTH_TOKEN is set
 ACP_CHAT_HOST=127.0.0.1 ACP_CHAT_PORT=8732 ACP_CHAT_AUTH_TOKEN=devtoken \\
@@ -24,6 +23,16 @@ ACP_CHAT_HOST=127.0.0.1 ACP_CHAT_PORT=8732 ACP_CHAT_AUTH_TOKEN=devtoken \\
 ```
 
 Then open `http://127.0.0.1:8732` (or `https://...` behind nginx).
+
+## Hosted dev (agents-dev)
+
+The dev instance is intended to be reachable at:
+
+- `https://agents-dev.stratospace.fun`
+
+DNS should be configured like `voice-dev`/`voice`:
+
+- `agents-dev.stratospace.fun` CNAME -> `p2.stratospace.fun` (DNS-only)
 
 ## Auth
 
@@ -38,4 +47,3 @@ Templates live in:
 
 - `deploy/nginx/agents-dev.conf`
 - `deploy/systemd/acp-chat.service`
-
